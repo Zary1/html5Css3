@@ -1,4 +1,33 @@
 /* seletor {propriedade: valor;}*/
-body{
-    background-color: brown;
+/*Smartphone portrait
+
+et portrait
+
+/*smartphobne landscape*/
+
+@media (min-width: 576px) {
+    body{
+     background-color: aqua;
+    } 
+}
+
+/*tablete portat*/
+@media (min-width: 768px) {
+    body{
+     background-color: forestgreen;
+    } 
+}
+
+/*tablet landscape */
+
+@media (min-width: 992px) {
+    body{
+     background-color: #ff6600;
+    } 
+}
+/**/
+@media (min-width: 1200px) {
+    body{
+     background-color: #e70808;
+    } 
 }
