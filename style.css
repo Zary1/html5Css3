@@ -3,6 +3,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
 /*css reset*/
+/*cabelhaco hearder*/
+header{
+    height: 80px;
+}
+#logo img{
+    width: 128px;
+    height: 128px;
+}
 body{
     font-family: 'Open Sans', sans-serif;  
     font-size: 1em;/*1 em quivale a 16px*/
@@ -15,31 +23,151 @@ body{
 /* layout*/
 .container{
     margin:  0 auto;/*para centralizar*/
-    background-color: darkgoldenrod;
+
+
+}
+.Flex{
+display: flex; /*para se tornar flexivel*/
+justify-content: space-between; 
+
+}
+.Flex2{
+    display: flex;
+    align-items: center;
+}
+.botao{
+  text-decoration: none;  
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: 700;
+  background-color: red;
+  border-radius: 25px;
+  padding: 10px 40px;
+  border: 2px solid #fff;
+}
+   
+   
+   
+
+/*topo do site*/
+#topo{
+    position: fixed;/*fizar um elemento no html*/
+   right: 10px; /*va se posicionar 10 a direita*/
+   bottom: 10px; /*va se posicionar 10 a baixo*/
 }
 
 
-
-
 /*smartphobne landscape*/
+#check{
+    display: none;
+}
+#label{
+   font-size: 3em; 
+position: fixed;
+top: 5px;
+right: 15px;
+color:rgb(0, 0, 0.5);
+}
+nav ul{
+    list-style: none;
+    background-color: #343538;
+    height: 100vh;/*define a altura total do menu, para o tamnho da tela*/
+    position: fixed;
+    top:60px;
+    right: -100%;
+    transition: all 0.5s;
+    width: 100%;
+}
+#check:checked ~ ul{
+    right: 0;
+}
+nav ul li{
+    padding: 20px;
+    border-bottom: 1px solid #a9a9a9;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+/*destaque*/
+main{
+ height: 75vh;  
+ background: url(imagen/banner.jpg);
+ background-size: cover;
+ color: #fff; 
+ /*centralizar um conteudo tanto na horizontal ou vertical*/
+display: flex;
+/*centralizar as imagens de backgroud*/
+background-position: center;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+}
 
+main h1{
+    font-size: 2.5em;
+}
+main h2{
+    font-size: 1em;
+    margin: 20px 0px 50px 0px;
+} 
+/*sobre*/
+#Sobre{
+    padding: 50px 0px;
+    background: url(imagen/background.png);
+    /*para a imagem se ajustar ao tamanho do container*/
+    background-size: cover;
+    background-position: center;
+}
+#destaquesobre{
+    display: none;
+}
+#textosobre{
+    color: #fff;
+    padding: 0px 10px;
+}
+#textosobre h2{
+    margin-bottom: 10px;
+}
+.topicossobre{
+    margin-bottom: 20px;
+}
+/* smartphone landscape*/
 @media (min-width: 576px) {
     body{
-     background-color: #008282;
+
     } 
     /* layout*/
 .container{
     max-width: 540px;
     }
+    /*destaque*/
+    main h1, main h2{
+        /*criando sobra*/
+        text-shadow: #000 0.05em 0.05em 0.05em;
+    }
+   
+   
+   
 }
 
 /*tablete portat*/
 @media (min-width: 768px) {
     body{
-     background-color: forestgreen;
+
     } 
     .container{
         max-width: 720px;
+        }
+        main{
+            /*para o tamanho da tela*/
+            height: 45vh;
+        }
+        main h1{
+            font-size: 5.5em;
+        }
+        main h2{
+            font-size: 2em;
         }
     }
     
@@ -47,21 +175,69 @@ body{
 
 @media (min-width: 992px) {
     body{
-     background-color: #ff6600;
+
     } 
     .container{
         max-width: 960px;
         }
+        /*desatque*/
+main{
+    height: 70vh;
+}
     }
     
 
 /*pc e notbokks*/
 @media (min-width: 1200px) {
     body{
-     background-color: #e70808;
+ 
     } 
     .container{
         max-width: 1140px;
         }
+        /*cabecalho hearder */
+        header{
+            height: 120px;
+
+        }
+        .logo img{
+           width: 189px;
+           height: 189px; 
+           margin-top: 30px;
+        }
+        label{
+            display: none;
+        }
+       
+        nav ul{
+            position: static;
+            height: auto;
+           background-color: transparent;/*para remover a color do back*/
+           margin-top: 0px;
+       
+        }
+    nav ul li{
+        float: left;
+        border: 0em;
+    }
+    nav ul li a{
+        color:#343538
+    }
+    /*posiciona o rato*/
+    nav ul li a:hover{
+        color: rgb(245, 57, 57);
+    }
+    #destaquesobre{
+        display: inline;
+        
+    }
+    #destaquesobre img{
+        border-radius: 50%;
+        margin-right: 50px;
+    }
+    /*efeito paralassy para o backgraud, nao se mexer*/
+    #sobre{
+        background-attachment: fixed;
+    }
     }
     
